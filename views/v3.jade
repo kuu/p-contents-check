@@ -1,0 +1,18 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    title= 'V3 Player Test'
+    meta(name='viewport', content='width=device-width,initial-scale=1')
+    script(src='//player.ooyala.com/core/#{playerId}')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    h1= 'V3 Player Test'
+    div(id='container', style='width:640px;height:360px')
+    script.
+      var playerParam = {
+        embedToken: "!{embedToken}"
+      };
+      OO.ready(function() {
+        OO.Player.create('container', "!{embedCode}", playerParam);
+      });
